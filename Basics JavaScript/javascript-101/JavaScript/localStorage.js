@@ -1,5 +1,6 @@
 /*
 localStorage allows you to store key/value pair in browser.
+Syntax below:
 */
 
 //Save Data
