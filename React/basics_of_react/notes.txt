@@ -1,0 +1,1 @@
+Contorl Components refers to inputs in React Form.
