@@ -63,9 +63,11 @@ function App() {
         setNewItem={setNewItem}
         handleSubmit={handleSubmit}
       />
-      {/* <SearchItem search={search} setSearch={setSearch} /> */}
+      <SearchItem search={search} setSearch={setSearch} />
       <Content
-        items={items.filter((item) => item.item.toLowerCase)}
+        items={items.filter((item) =>
+          item.item.toLowerCase().includes(search.toLocaleLowerCase())
+        )}
         handleCheck={handleCheck}
         handleDelete={handleDelete}
       />
