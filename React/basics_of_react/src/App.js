@@ -4,11 +4,14 @@ import Footer from "./Footer";
 import Header from "./Header";
 import AddItem from "./AddItem";
 import { useState } from "react";
+import SearchItem from "./SearchItem";
 
 function App() {
   const [items, setItems] = useState(
     JSON.parse(localStorage.getItem("shoppingList"))
   );
+
+  const [search, setSearch] = useState("");
 
   const [newItem, setNewItem] = useState("");
 
@@ -60,8 +63,9 @@ function App() {
         setNewItem={setNewItem}
         handleSubmit={handleSubmit}
       />
+      {/* <SearchItem search={search} setSearch={setSearch} /> */}
       <Content
-        items={items}
+        items={items.filter((item) => item.item.toLowerCase)}
         handleCheck={handleCheck}
         handleDelete={handleDelete}
       />
