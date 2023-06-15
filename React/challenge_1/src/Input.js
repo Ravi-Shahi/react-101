@@ -5,6 +5,8 @@ const Input = ({
   setHexValue,
   isDarkText,
   setIsDarkText,
+  inputRef,
+  handleRef,
 }) => {
   return (
     <form onSubmit={(e) => e.preventDefault()}>
@@ -19,8 +21,14 @@ const Input = ({
           setHexValue(colorNames(e.target.value));
         }}
         placeholder="Add your color"
+        ref={inputRef}
       />
-      <button onClick={(e) => setIsDarkText(!isDarkText)}>
+      <button
+        onClick={(e) => {
+          setIsDarkText(!isDarkText);
+          handleRef();
+        }}
+      >
         Toggle Text Color
       </button>
     </form>
